@@ -9,23 +9,23 @@ void addProduct(vector<string>& names, vector<int>& quantities, vector<double>& 
     int quantity;
     double price;
 
-    cout << "Ââåä³òü íàçâó òîâàðó: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð°Ð·Ð²Ñƒ Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ: ";
     cin >> name;
-    cout << "Ââåä³òü ê³ëüê³ñòü: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ: ";
     cin >> quantity;
-    cout << "Ââåä³òü ö³íó: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ†Ñ–Ð½Ñƒ: ";
     cin >> price;
 
     names.push_back(name);
     quantities.push_back(quantity);
     prices.push_back(price);
 
-    cout << "Òîâàð äîäàíî!\n";
+    cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð´Ð¾Ð´Ð°Ð½Ð¾!\n";
 }
 
 void removeProduct(vector<string>& names, vector<int>& quantities, vector<double>& prices) {
     string name;
-    cout << "Ââåä³òü íàçâó òîâàðó äëÿ âèäàëåííÿ: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð°Ð·Ð²Ñƒ Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ Ð´Ð»Ñ Ð²Ð¸Ð´Ð°Ð»ÐµÐ½Ð½Ñ: ";
     cin >> name;
 
     for (size_t i = 0; i < names.size(); ++i) {
@@ -33,45 +33,45 @@ void removeProduct(vector<string>& names, vector<int>& quantities, vector<double
             names.erase(names.begin() + i);
             quantities.erase(quantities.begin() + i);
             prices.erase(prices.begin() + i);
-            cout << "Òîâàð âèäàëåíî!\n";
+            cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð²Ð¸Ð´Ð°Ð»ÐµÐ½Ð¾!\n";
             return;
         }
     }
 
-    cout << "Òîâàð íå çíàéäåíî.\n";
+    cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð·Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾.\n";
 }
 
 void updateQuantity(vector<string>& names, vector<int>& quantities) {
     string name;
     int newQuantity;
 
-    cout << "Ââåä³òü íàçâó òîâàðó äëÿ îíîâëåííÿ: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð°Ð·Ð²Ñƒ Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ Ð´Ð»Ñ Ð¾Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ: ";
     cin >> name;
-    cout << "Ââåä³òü íîâó ê³ëüê³ñòü: ";
+    cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ð½Ð¾Ð²Ñƒ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ: ";
     cin >> newQuantity;
 
     for (size_t i = 0; i < names.size(); ++i) {
         if (names[i] == name) {
             quantities[i] = newQuantity;
-            cout << "Ê³ëüê³ñòü îíîâëåíî!\n";
+            cout << "ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ð¾Ð½Ð¾Ð²Ð»ÐµÐ½Ð¾!\n";
             return;
         }
     }
 
-    cout << "Òîâàð íå çíàéäåíî.\n";
+    cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð·Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾.\n";
 }
 
 void showProducts(const vector<string>& names, const vector<int>& quantities, const vector<double>& prices) {
     if (names.empty()) {
-        cout << "Ñêëàä ïîðîæí³é.\n";
+        cout << "Ð¡ÐºÐ»Ð°Ð´ Ð¿Ð¾Ñ€Ð¾Ð¶Ð½Ñ–Ð¹.\n";
         return;
     }
 
-    cout << "Òîâàðè íà ñêëàä³:\n";
+    cout << "Ð¢Ð¾Ð²Ð°Ñ€Ð¸ Ð½Ð° ÑÐºÐ»Ð°Ð´Ñ–:\n";
     for (size_t i = 0; i < names.size(); ++i) {
-        cout << "Íàçâà: " << names[i]
-            << ", Ê³ëüê³ñòü: " << quantities[i]
-            << ", Ö³íà: " << prices[i] << "\n";
+        cout << "ÐÐ°Ð·Ð²Ð°: " << names[i]
+             << ", ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ: " << quantities[i]
+             << ", Ð¦Ñ–Ð½Ð°: " << prices[i] << "\n";
     }
 }
 
@@ -82,7 +82,7 @@ void calculateTotalValue(const vector<int>& quantities, const vector<double>& pr
         totalValue += quantities[i] * prices[i];
     }
 
-    cout << "Çàãàëüíà âàðò³ñòü òîâàð³â íà ñêëàä³: " << totalValue << "\n";
+    cout << "Ð—Ð°Ð³Ð°Ð»ÑŒÐ½Ð° Ð²Ð°Ñ€Ñ‚Ñ–ÑÑ‚ÑŒ Ñ‚Ð¾Ð²Ð°Ñ€Ñ–Ð² Ð½Ð° ÑÐºÐ»Ð°Ð´Ñ–: " << totalValue << "\n";
 }
 
 int main() {
@@ -93,36 +93,30 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "\nÌåíþ:\n";
-        cout << "1. Äîäàòè òîâàð\n";
-        cout << "2. Âèäàëèòè òîâàð\n";
-        cout << "3. Îíîâèòè ê³ëüê³ñòü òîâàðó\n";
-        cout << "4. Ïîêàçàòè âñ³ òîâàðè\n";
-        cout << "5. Ðîçðàõóâàòè çàãàëüíó âàðò³ñòü\n";
-        cout << "6. Âèéòè\n";
-        cout << "Âàø âèá³ð: ";
+        cout << "\nÐœÐµÐ½ÑŽ:\n";
+        cout << "1. Ð”Ð¾Ð´Ð°Ñ‚Ð¸ Ñ‚Ð¾Ð²Ð°Ñ€\n";
+        cout << "2. Ð’Ð¸Ð´Ð°Ð»Ð¸Ñ‚Ð¸ Ñ‚Ð¾Ð²Ð°Ñ€\n";
+        cout << "3. ÐžÐ½Ð¾Ð²Ð¸Ñ‚Ð¸ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ\n";
+        cout << "4. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚Ð¸ Ð²ÑÑ– Ñ‚Ð¾Ð²Ð°Ñ€Ð¸\n";
+        cout << "5. Ð Ð¾Ð·Ñ€Ð°Ñ…ÑƒÐ²Ð°Ñ‚Ð¸ Ð·Ð°Ð³Ð°Ð»ÑŒÐ½Ñƒ Ð²Ð°Ñ€Ñ‚Ñ–ÑÑ‚ÑŒ\n";
+        cout << "6. Ð’Ð¸Ð¹Ñ‚Ð¸\n";
+        cout << "Ð’Ð°Ñˆ Ð²Ð¸Ð±Ñ–Ñ€: ";
         cin >> choice;
 
         if (choice == 1) {
             addProduct(productNames, productQuantities, productPrices);
-        }
-        else if (choice == 2) {
+        } else if (choice == 2) {
             removeProduct(productNames, productQuantities, productPrices);
-        }
-        else if (choice == 3) {
+        } else if (choice == 3) {
             updateQuantity(productNames, productQuantities);
-        }
-        else if (choice == 4) {
+        } else if (choice == 4) {
             showProducts(productNames, productQuantities, productPrices);
-        }
-        else if (choice == 5) {
+        } else if (choice == 5) {
             calculateTotalValue(productQuantities, productPrices);
-        }
-        else if (choice == 6) {
+        } else if (choice == 6) {
             break;
-        }
-        else {
-            cout << "Íåêîðåêòíèé âèá³ð. Ñïðîáóéòå ùå ðàç.\n";
+        } else {
+            cout << "ÐÐµÐºÐ¾Ñ€ÐµÐºÑ‚Ð½Ð¸Ð¹ Ð²Ð¸Ð±Ñ–Ñ€. Ð¡Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ñ‰Ðµ Ñ€Ð°Ð·.\n";
         }
     }
 
